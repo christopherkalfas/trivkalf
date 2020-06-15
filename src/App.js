@@ -4,6 +4,7 @@ import axios from "axios"
 import './App.css';
 
 import Prompt from "./components/Prompt"
+import Answer from "./components/Answer"
 
 class App extends Component {
   constructor(props){
@@ -73,6 +74,7 @@ class App extends Component {
       <div className="container">
         <h1>TrivKalf</h1>
         <Prompt data={this.state}/>
+        <Answer data={this.state} />
       </div>
     )
   }
