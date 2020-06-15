@@ -3,6 +3,7 @@ import ReactDOM from "react-dom"
 import axios from "axios"
 import './App.css';
 
+import Header from "./components/Header"
 import Prompt from "./components/Prompt"
 import Answer from "./components/Answer"
 import Round from "./components/Round"
@@ -24,11 +25,11 @@ class App extends Component {
 
     this.updateCorrect = this.updateCorrect.bind(this);
     this.updateIncorrect = this.updateIncorrect.bind(this);
-    // this.resetSession = this.resetSession.bind(this);
+    this.restartRound = this.restartRound.bind(this);
   }
 
   getQuestions(){
-    axios.get('https://opentdb.com/api.php?amount=1&difficulty=medium&type=multiple')
+    axios.get('https://opentdb.com/api.php?amount=1&difficulty=easy&type=multiple')
       .then(resp => {
         console.log(resp)
         const triviaData = resp.data.results[0]
@@ -90,17 +91,26 @@ class App extends Component {
     }, 500)
   }
 
+  restartRound(){
+    this.setState((prevState,props) => ({
+      correct: 0, 
+      incorrect: 0
+    }))
+  }
+
   render(){
     return(
-      <div className="container">
-        <h1>TrivKalf</h1>
+      <div className="background">
+        <Header />
+        <div className="game-container">
         <Prompt data={this.state}/>
         <Answer 
           data={this.state}
           updateCorrect={this.updateCorrect.bind(this)}
           updateIncorrect={this.updateIncorrect.bind(this)}  
         />
-        <Round results={this.state} />
+        <Round results={this.state} restartRound={this.restartRound.bind(this)} />
+        </div>
       </div>
     )
   }

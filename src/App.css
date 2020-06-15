@@ -1,7 +1,79 @@
 .App {
   text-align: center;
 }
+.background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  animation: bg-animation 15s infinite;
+}
 
+@-webkit-keyframes bg-animation {
+  0% {
+    background-color: red;
+  }
+  15% {
+    background-color: yellow;
+  }
+  30% {
+    background-color: green;
+  }
+  45% {
+    background-color: blue;
+  }
+  60% {
+    background-color: purple;
+  }
+  75% {
+    background-color: pink;
+  }
+  90% {
+    background-color: brown;
+  }
+  100% {
+    background-color: red;
+  }
+}
+
+@keyframes bg-animation {
+  0% {
+    background-color: red;
+  }
+  15% {
+    background-color: yellow;
+  }
+  30% {
+    background-color: green;
+  }
+  45% {
+    background-color: blue;
+  }
+  60% {
+    background-color: purple;
+  }
+  75% {
+    background-color: pink;
+  }
+  90% {
+    background-color: brown;
+  }
+  100% {
+    background-color: red;
+  }
+}
+
+.header-container {
+  text-align: center;
+}
+.game-container {
+  margin: 40px;
+  background-color: grey;
+  color: whitesmoke;
+  padding: 20px;
+  border-radius: 3px;
+}
 
 .App-header {
   background-color: #282c34;
@@ -18,6 +90,7 @@ button {
   border: 2px black;
   border-radius: 3px;
   margin: 8px;
+  outline: none;
 }
 
 .correct {

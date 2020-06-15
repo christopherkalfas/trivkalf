@@ -51,7 +51,7 @@ class Answer extends Component {
 
     render(){
         return(
-            <div className="options-coontainer">
+            <div className="options-container">
                 <button  onClick={e => this.setAnswer(e)} dangerouslySetInnerHTML={this.props.data.triviaData[0].choices[0]}></button>
                 <button  onClick={e => this.setAnswer(e)} dangerouslySetInnerHTML={this.props.data.triviaData[0].choices[1]}></button>
                 <button  onClick={e => this.setAnswer(e)} dangerouslySetInnerHTML={this.props.data.triviaData[0].choices[2]}></button>
