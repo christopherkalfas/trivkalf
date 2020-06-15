@@ -7,15 +7,17 @@ class Answer extends Component {
         this.state={
 
         }
+
+        this.setAnswer = this.setAnswer.bind(this)
     
     }
 
     revealAnswer(){
-        const answerOptions = document.getElementsByClassName('answer button')
-        const correctAnswer = this.props.data.triviaData[0].correct.__html
+        const choices = document.querySelectorAll('choice')
+        const answer = this.props.data.triviaData[0].correct.__html
 
-        answerOptions.forEach(e => {
-            if (e.innerHTML === correctAnswer){
+       choices.forEach((e) => {
+            if (e.innerHTML === answer){
                 e.className= "right"
 
                 setTimeout(()=> {
@@ -26,20 +28,20 @@ class Answer extends Component {
     }
     setAnswer(e){
         const clicked = e.target
-        const correctAnswer = this.props.data.triviaData[0].correct.__html
+        const answer = this.props.data.triviaData[0].correct.__html
 
         this.revealAnswer()
 
-        if (clicked.innerHTML === correctAnswer) {
-            e.target.className = "right"
-            // this.props.updateCorrect()
+        if (clicked.innerHTML === answer) {
+            e.target.className = "correct"
+            this.props.updateCorrect()
 
             setTimeout(()=> {
                 clicked.className = "beige"
             },500)
         } else {
-            e.target.className = "wrong"
-            // this.props.updateWrong()
+            e.target.className = "incorrect"
+            this.props.updateIncorrect()
 
             setTimeout(()=> {
                 clicked.className="beige"
@@ -49,11 +51,11 @@ class Answer extends Component {
 
     render(){
         return(
-            <div className="answer">
-                <button onClick={e => this.setAnswer(e)} dangerouslySetInnerHTML={this.props.data.triviaData[0].choices[0]}></button>
-                <button onClick={e => this.setAnswer(e)} dangerouslySetInnerHTML={this.props.data.triviaData[0].choices[1]}></button>
-                <button onClick={e => this.setAnswer(e)} dangerouslySetInnerHTML={this.props.data.triviaData[0].choices[2]}></button>
-                <button onClick={e => this.setAnswer(e)} dangerouslySetInnerHTML={this.props.data.triviaData[0].choices[3]}></button>
+            <div className="options-coontainer">
+                <button  onClick={e => this.setAnswer(e)} dangerouslySetInnerHTML={this.props.data.triviaData[0].choices[0]}></button>
+                <button  onClick={e => this.setAnswer(e)} dangerouslySetInnerHTML={this.props.data.triviaData[0].choices[1]}></button>
+                <button  onClick={e => this.setAnswer(e)} dangerouslySetInnerHTML={this.props.data.triviaData[0].choices[2]}></button>
+                <button  onClick={e => this.setAnswer(e)} dangerouslySetInnerHTML={this.props.data.triviaData[0].choices[3]}></button>
             </div>
         )
     }

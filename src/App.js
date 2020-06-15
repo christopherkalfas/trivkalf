@@ -5,6 +5,7 @@ import './App.css';
 
 import Prompt from "./components/Prompt"
 import Answer from "./components/Answer"
+import Round from "./components/Round"
 
 class App extends Component {
   constructor(props){
@@ -21,13 +22,13 @@ class App extends Component {
       incorrect: 0,
     }
 
-    // this.updateCorrect = this.updateCorrect.bind(this);
-    // this.updateIncorrect = this.updateIncorrect.bind(this);
+    this.updateCorrect = this.updateCorrect.bind(this);
+    this.updateIncorrect = this.updateIncorrect.bind(this);
     // this.resetSession = this.resetSession.bind(this);
   }
 
   getQuestions(){
-    axios.get('https://opentdb.com/api.php?amount=10&difficulty=medium&type=multiple')
+    axios.get('https://opentdb.com/api.php?amount=1&difficulty=medium&type=multiple')
       .then(resp => {
         console.log(resp)
         const triviaData = resp.data.results[0]
@@ -69,12 +70,37 @@ class App extends Component {
     this.getQuestions()
   }
 
+  updateCorrect(){
+    this.setState((prevState, props)=> ({
+      correct: this.state.correct + 1
+    }))
+  
+    setTimeout(()=> {
+      this.getQuestions()
+    }, 500)
+  }
+
+  updateIncorrect(){
+    this.setState((prevState, props)=> ({
+      incorrect: this.state.incorrect + 1
+    }))
+
+    setTimeout(()=> {
+      this.getQuestions()
+    }, 500)
+  }
+
   render(){
     return(
       <div className="container">
         <h1>TrivKalf</h1>
         <Prompt data={this.state}/>
-        <Answer data={this.state} />
+        <Answer 
+          data={this.state}
+          updateCorrect={this.updateCorrect.bind(this)}
+          updateIncorrect={this.updateIncorrect.bind(this)}  
+        />
+        <Round results={this.state} />
       </div>
     )
   }
