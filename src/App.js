@@ -6,6 +6,7 @@ import Header from "./components/Header"
 import Prompt from "./components/Prompt"
 import Answer from "./components/Answer"
 import Round from "./components/Round"
+import Categories from "./components/Categories"
 
 class App extends Component {
   constructor(props){
@@ -112,6 +113,7 @@ class App extends Component {
           </div>
             <Round results={this.state} restartRound={this.restartRound.bind(this)} />
         </div>
+        <Categories />
       </div>
     )
   }
