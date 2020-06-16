@@ -3,10 +3,10 @@ import axios from "axios"
 import Select from "react-select"
 
 const options = [
-    {value: 10, label: 'Books'},
-    {value: 11, label: 'Film'},
-    {value: 12, label: 'Music'},
-    {value: 13, label: 'Musicals & Theatre'}
+    {value: "10", label: 'Books'},
+    {value: "11", label: 'Film'},
+    {value: "12", label: 'Music'},
+    {value: "13", label: 'Musicals & Theatre'}
 ]
 
 class Categories extends Component {
