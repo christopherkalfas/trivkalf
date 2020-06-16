@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import ReactDOM from 'react-dom'
+
 
 class Prompt extends Component {
     constructor(){
@@ -11,10 +11,14 @@ class Prompt extends Component {
     render(){
         return(
             <div className='question-prompt'>
-                <h3> Category:</h3>
-                <p> {this.props.data.triviaData[0].category}</p>
-                <h2>Question:</h2>
-                <p dangerouslySetInnerHTML={this.props.data.triviaData[0].question}></p>
+                <div className="category">
+                    <h3> Category:</h3>
+                    <h4> {this.props.data.triviaData[0].category}</h4>
+                </div>
+                <div className = "question">
+                    <h2>Question:</h2>
+                    <h4 dangerouslySetInnerHTML={this.props.data.triviaData[0].question}></h4>
+                </div>
             </div>
         )
     }

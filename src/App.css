@@ -32,20 +32,74 @@
   100%{background-position:0% 50%}
 } 
 
+h2, h3, h5 {
+  animation: flow 18s ease-in-out infinite;
+  background-image: linear-gradient(-60deg, #1c8bd1, #9361ef);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  
+}
 
+h4 {
+  color: whitesmoke;
+}
+
+p {
+  color: whitesmoke;
+}
 
 .header-container {
   text-align: center;
   color: whitesmoke;
   font-weight: 300;
-  font-size: 20px;
+  font-size: 28px;
+  font-family: "Allan", Helvetica, Arial, sans-serif;
+
 }
 .game-container {
-  margin: 40px;
-  background-color: grey;
-  color: whitesmoke;
+  margin: auto;
+  background-color: #7a7978;
   padding: 20px;
+  border-radius: 8px;
+  border: 8px;
+  width: 85%;
+  display: flex;
+  min-height: 400px;
+  -webkit-box-shadow: 6px 6px 15px 6px rgba(87,83,87,1);
+  -moz-box-shadow: 6px 6px 15px 6px rgba(87,83,87,1);
+  box-shadow: 6px 6px 15px 6px rgba(87,83,87,1);
+}
+
+.round-container{
   border-radius: 3px;
+  background-color: #282c34;
+  width: 20%;
+  flex: 1;
+  display: inline-block;
+  padding-left: 16px ;
+  margin-left: 18px;
+  font-size: 30px;
+  height: auto;
+  -webkit-box-shadow: 3px 5px 5px 3px rgba(69,68,69,1);
+  -moz-box-shadow: 3px 5px 5px 3px rgba(69,68,69,1);
+  box-shadow: 3px 5px 5px 3px rgba(69,68,69,1);
+}
+
+
+.sub-container {
+  border-radius: 3px;
+  flex: 3;
+  background-color: #282c34;
+  display: inline-block;
+  padding: 12px;
+  width: 80%;
+  text-align: center;
+  height: auto;
+  -webkit-box-shadow: 3px 5px 5px 3px rgba(69,68,69,1);
+  -moz-box-shadow: 3px 5px 5px 3px rgba(69,68,69,1);
+  box-shadow: 3px 5px 5px 3px rgba(69,68,69,1);
+
 }
 
 .App-header {
@@ -59,21 +113,84 @@
   color: white;
 }
 
+.options-container {
+  margin-top: 24px;
+
+}
 button {
-  border: 2px black;
+  border: 2px transparent;
   border-radius: 3px;
-  margin: 8px;
+  margin: 12px;
   outline: none;
+  width: 40%;
+  padding: 10px;
+  text-align: center;
+  box-shadow: 1px 1px 3px 0px rgb(239, 239, 239);
+  font-size: 28px;
+  transition: 0.3s;
+  cursor: pointer;
+  height: 140px;
+  font-family: "Allan", Helvetica, Arial, sans-serif;
+  
 }
 
+button:hover {
+  box-shadow: 1px 1px 3px 0px rgb(239, 239, 239);
+  transform: translateY(-5px);
+  transition: 0.3s;
+}
+
+button:active {
+  background: rgb(239, 239, 239);
+}
+
+.column {
+  float: left;
+  width: 50%;
+  font-family: "Allan", Helvetica, Arial, sans-serif;
+  letter-spacing: 0.1em;
+
+}
+.restart {
+  border-radius: 50%;
+  border: 2px black;
+  max-height: 70px;
+  font-size: 24px;
+  width: fit-content;
+  padding: 15px;
+  background-color: aquamarine;
+  box-shadow: 3px 3px 6px 4px rgba(69,69,69,1) aquamarine;
+}
+  
+
 .correct {
-  background-color: greenyellow;
+  background-color: #28a745!important;
+
 }
 
 .incorrect {
-  background-color: red;
+  background-color: #dc3545!important;
+
 }
 
 .beige {
-  background-color: beige;
+  background: rgb(239, 239, 239);
+  
+}
+
+.footer {
+  font-family: "Allan", Helvetica, Arial, sans-serif;
+  text-align: center;
+  color: whitesmoke;
+  font-size: 20px;
+  letter-spacing: 0.1em;
+  padding-top: 50px;
+  font-weight: 200;
+  margin-top: 180px;
+
+}
+
+.footer a {
+  text-decoration: none;
+  color: whitesmoke;
 }

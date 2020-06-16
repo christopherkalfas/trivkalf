@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import Footer from './Footer'
 
 class Round extends Component {
     constructor(){
@@ -12,9 +13,18 @@ class Round extends Component {
     render(){
         return(
             <div className = "round-container">
-                <p>Correct: {this.props.results.correct}</p>
-                <p>Incorrect: {this.props.results.incorrect}</p>
+                <div className="row">
+                    <div className="column">
+                        <h5>Correct:</h5>
+                        <h5>Incorrect: </h5>
+                    </div>
+                    <div className="column">
+                        <h5>{this.props.results.correct}</h5>
+                        <h5>{this.props.results.incorrect}</h5>
+                    </div>
+                </div>
                 <button className="restart" onClick={e => this.props.restartRound()}>Restart</button>
+                <Footer />
             </div>
         )
     }

@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import ReactDOM from "react-dom"
 import axios from "axios"
 import './App.css';
 
@@ -103,13 +102,15 @@ class App extends Component {
       <div className="background">
         <Header />
         <div className="game-container">
-        <Prompt data={this.state}/>
-        <Answer 
-          data={this.state}
-          updateCorrect={this.updateCorrect.bind(this)}
-          updateIncorrect={this.updateIncorrect.bind(this)}  
-        />
-        <Round results={this.state} restartRound={this.restartRound.bind(this)} />
+          <div className="sub-container">
+            <Prompt data={this.state}/>
+            <Answer 
+              data={this.state}
+              updateCorrect={this.updateCorrect.bind(this)}
+              updateIncorrect={this.updateIncorrect.bind(this)}  
+            />
+          </div>
+            <Round results={this.state} restartRound={this.restartRound.bind(this)} />
         </div>
       </div>
     )
