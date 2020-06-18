@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route } from "react-router-dom"
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom"
 // import axios from "axios"
 import './App.css';
 
@@ -10,6 +10,7 @@ import Navbar from './components/NavBar';
 import AllCategories from './components/AllCategories';
 import CategoryContainer from './components/select/CategoryContainer';
 
+
 class App extends Component {
   
 
@@ -17,16 +18,18 @@ class App extends Component {
     return(
       <div className="background">
         <Header />
-          <AllCategories />
-        {/* <Router>
+          {/* <AllCategories /> */}
+        <Router>
           <Navbar />
-          <Route exact path="/playall">
-            <AllCategories />
-          </Route>
-          <Route exact path="play-category">
-            <CategoryContainer />
-          </Route>
-        </Router> */}
+        <Switch>
+          
+          <Route exact path="/playall" exact component={AllCategories} />
+           
+          <Route  path="/play-category" exact component={CategoryContainer}/>
+      
+          </Switch>
+        </Router>
+
         
       </div>
     )

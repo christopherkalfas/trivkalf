@@ -35,14 +35,14 @@ export default function CategoryContainer(){
         }, [category])
     
         useEffect(()=> {
-            getQuestion()
+         getQuestion()
         }, [getQuestion, category])
     
         return {question, category, setQuestion, setCategory}
     }
     return(
         <div className="game-container">
-            <div className="category-container">
+            <div className="sub-container">
                 {isCorrect !==null && (
                     <Results
                         isCorrect={isCorrect}

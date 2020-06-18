@@ -25,6 +25,8 @@ class AllCategories extends Component {
         this.restartRound = this.restartRound.bind(this);
     }
 
+    
+
     getQuestions(){
         axios.get('https://opentdb.com/api.php?amount=1&difficulty=easy&type=multiple')
             .then(resp => {
