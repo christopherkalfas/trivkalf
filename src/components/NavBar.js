@@ -24,7 +24,7 @@ class Navbar extends Component {
             <nav>
                 <ul>
                     <NavItem item="Play with all Categories" tolink="/playall" activec={this.activeitem}></NavItem>
-                    {/* <NavItem item="Select a Category " tolink="/categories" activec={this.activeitem}></NavItem> */}
+                    <NavItem item="Select a Category " tolink="/play-category" activec={this.activeitem}></NavItem>
                 </ul>
             </nav>
         )
