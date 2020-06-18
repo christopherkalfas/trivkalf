@@ -2,6 +2,7 @@ import React, {useState, useEffect, useCallback} from 'react'
 import CategorySelection from "./CategorySelection"
 import Question from "./Question"
 import AnswerTracker from "./AnswerTracker"
+import Footer from "../Footer"
 
 
 import Results from './Results'
@@ -38,21 +39,14 @@ export default function CategoryContainer(){
          getQuestion()
         }, [getQuestion, category])
     
-        return {question, category, setQuestion, setCategory}
+        return {question, category, getQuestion, setCategory}
     }
     return(
         <div className="game-container">
             <div className="sub-container">
-                {isCorrect !==null && (
-                    <Results
-                        isCorrect={isCorrect}
-                        question= {question}
-                        getQuestion = {handleNextQuestion}
-                    />
-                )}
                 <div className="question-head">
-                    <CategorySelection category={category} selectCategory={setCategory} />
-                    <AnswerTracker isCorrect={isCorrect} />
+                    <h3>Category:</h3>
+                    <h4>{category}</h4>
                 </div>
                 <div className="question-body">
                     {question && (
@@ -61,8 +55,20 @@ export default function CategoryContainer(){
                     )}
                 </div>
                 <div className="next-question-btn">
-                    <button onClick={handleNextQuestion}>Next Question</button>
+                {isCorrect !==null && (
+                    <Results
+                        isCorrect={isCorrect}
+                        question= {question}
+                        getQuestion = {handleNextQuestion}
+                    />
+                )}
+                    {/* <button onClick={handleNextQuestion}>Next Question</button> */}
                 </div>
+            </div>
+            <div className="round-container">
+                    <AnswerTracker isCorrect={isCorrect} />
+                    <CategorySelection category={category} selectCategory={setCategory} />
+                    <Footer />
             </div>
         </div>
     )

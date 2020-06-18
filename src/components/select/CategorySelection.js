@@ -4,7 +4,7 @@ import categoriesData from './categoriesData'
 export default function CategorySelection({category, selectCategory}) {
     return(
         <div className="category-selection">
-            <h4> Select Category</h4>
+            <h5> Select Category: </h5>
             <select value={category} onChange={e => selectCategory(e.target.value)}>
                 {categoriesData.map((category, index) => (
                     <option

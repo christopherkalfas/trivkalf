@@ -10,11 +10,11 @@ export default function Results({ isCorrect, question, getQuestion}){
 
             { !isCorrect && (
                 <div className="correct-answer">
-                    <h5>The answer was: </h5>
-                    <h4 dangerouslySetInnerHTML={{__html: question.correct_answer}} />
+                    <h4>The answer was: </h4>
+                    <h3 dangerouslySetInnerHTML={{__html: question.correct_answer}} />
                 </div>
             )}
-            <button onClick={getQuestion}> Next Question</button>
+            <button className="next-question" onClick={getQuestion}> Next Question</button>
         </div>
     )
 }

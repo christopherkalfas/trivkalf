@@ -1,5 +1,6 @@
 import React, {useState, useEffect } from 'react'
 
+
 function Answertracker({isCorrect}) {
     const [correct, setCorrect] = useState(0)
     const [incorrect, setIncorrect] = useState(0)
@@ -15,7 +16,7 @@ function Answertracker({isCorrect}) {
     }, [isCorrect])
 
     return(
-        <div className='round-conatiner'>
+        <div>
             <div className="row">
                     <div className="column">
                         <h5>Correct:</h5>
@@ -26,6 +27,7 @@ function Answertracker({isCorrect}) {
                         <h5>{incorrect}</h5>
                     </div>
                 </div>
+                
         </div>
     )
 }

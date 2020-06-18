@@ -22,9 +22,9 @@ class Navbar extends Component {
     render(){
         return(
             <nav>
-                <ul>
-                    <NavItem item="Play with all Categories" tolink="/playall" activec={this.activeitem}></NavItem>
-                    <NavItem item="Select a Category " tolink="/play-category" activec={this.activeitem}></NavItem>
+                <ul className="nav-container">
+                    <li><NavItem className="nav-btn" item="Random" tolink="/playall" activec={this.activeitem}></NavItem></li>
+                    <li><NavItem className="nav-btn" item="Pick Category " tolink="/play-category" activec={this.activeitem}></NavItem></li>
                 </ul>
             </nav>
         )

@@ -18,6 +18,6 @@ export default function TriviaAPI() {
         getQuestion()
     }, [getQuestion, category])
 
-    return {question, category, setQuestion, setCategory}
+    return {question, category, getQuestion, setCategory}
 }
 

@@ -55,8 +55,34 @@ p {
   font-weight: 300;
   font-size: 28px;
   font-family: "Allan", Helvetica, Arial, sans-serif;
-
 }
+
+
+
+.nav-container {
+
+  text-align: center;
+  color: whitesmoke;
+  font-weight: 300;
+  font-size: 18px;
+  font-family: "Allan", Helvetica, Arial, sans-serif;
+  list-style-type: none;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.nav-container li {
+  display: inline;
+}
+
+.nav-container a {
+  color: whitesmoke;
+  text-decoration: none;
+  padding: 15px;
+  text-align: center;
+  font-size: larger;
+}
+
 .game-container {
   margin: auto;
   background-color: #7a7978;
@@ -162,7 +188,16 @@ button:active {
   box-shadow: 3px 3px 6px 4px rgba(69,69,69,1) aquamarine;
 }
   
-
+/* .next-question {
+  border-radius: 50%;
+  border: 2px black;
+  max-height: 70px;
+  font-size: 24px;
+  width: fit-content;
+  padding: 15px;
+  background-color: aquamarine;
+  box-shadow: 3px 3px 6px 4px rgba(69,69,69,1) aquamarine;
+} */
 .correct {
   background-color: #28a745!important;
 
@@ -186,7 +221,7 @@ button:active {
   letter-spacing: 0.1em;
   padding-top: 50px;
   font-weight: 200;
-  margin-top: 180px;
+  margin-top: 175px;
 
 }
 

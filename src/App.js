@@ -18,16 +18,14 @@ class App extends Component {
     return(
       <div className="background">
         <Header />
-          {/* <AllCategories /> */}
-        <Router>
-          <Navbar />
-        <Switch>
-          
-          <Route exact path="/playall" exact component={AllCategories} />
-           
-          <Route  path="/play-category" exact component={CategoryContainer}/>
-      
-          </Switch>
+          <Router>
+          <div>
+            <Navbar />
+              <Switch>
+                <Route exact path="/playall" exact component={AllCategories} />
+                <Route  path="/play-category" exact component={CategoryContainer}/>
+              </Switch>
+          </div>
         </Router>
 
         
