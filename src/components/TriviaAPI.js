@@ -1,6 +1,6 @@
-import React, {useState, useEffect, useCallback } from 'react'
+import {useState, useEffect, useCallback } from 'react'
 
-function TriviaAPI() {
+export default function TriviaAPI() {
     const [question, setQuestion] = useState(null);
     const [category, setCategory] = useState('any');
 
@@ -21,4 +21,3 @@ function TriviaAPI() {
     return {question, category, setQuestion, setCategory}
 }
 
-export default TriviaAPI
