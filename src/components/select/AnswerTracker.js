@@ -1,9 +1,12 @@
-import React, {useState, useEffect } from 'react'
+import React, {useState, useEffect,  } from 'react'
 
 
 function Answertracker({isCorrect}) {
     const [correct, setCorrect] = useState(0)
     const [incorrect, setIncorrect] = useState(0)
+    
+
+   
 
     useEffect(()=> {
         if (isCorrect === null) return
@@ -26,6 +29,14 @@ function Answertracker({isCorrect}) {
                         <h5>{correct}</h5>
                         <h5>{incorrect}</h5>
                     </div>
+                </div>
+                <div className="row">
+                <button
+                    className="restart"
+                    onClick={ () => {
+                        setCorrect(0)
+                        setIncorrect(0)
+                    }}>Restart</button>
                 </div>
                 
         </div>

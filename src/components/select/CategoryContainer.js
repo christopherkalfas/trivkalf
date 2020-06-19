@@ -45,8 +45,9 @@ export default function CategoryContainer(){
         <div className="game-container">
             <div className="sub-container">
                 <div className="question-head">
-                    <h3>Category:</h3>
-                    <h4>{category}</h4>
+                    <h4>
+                        <CategorySelection category={category} selectCategory={setCategory} />
+                    </h4>
                 </div>
                 <div className="question-body">
                     {question && (
@@ -66,8 +67,8 @@ export default function CategoryContainer(){
                 </div>
             </div>
             <div className="round-container">
+                
                     <AnswerTracker isCorrect={isCorrect} />
-                    <CategorySelection category={category} selectCategory={setCategory} />
                     <Footer />
             </div>
         </div>

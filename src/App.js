@@ -19,10 +19,10 @@ class App extends Component {
       <div className="background">
         <Header />
           <Router>
-          <div>
             <Navbar />
+          <div>
               <Switch>
-                <Route exact path="/playall" exact component={AllCategories} />
+                <Route exact path="/playall"  component={AllCategories} />
                 <Route  path="/play-category" exact component={CategoryContainer}/>
               </Switch>
           </div>

@@ -23,8 +23,8 @@ class Navbar extends Component {
         return(
             <nav>
                 <ul className="nav-container">
-                    <li><NavItem className="nav-btn" item="Random" tolink="/playall" activec={this.activeitem}></NavItem></li>
-                    <li><NavItem className="nav-btn" item="Pick Category " tolink="/play-category" activec={this.activeitem}></NavItem></li>
+                    <NavItem className="nav-btn" item="Random" tolink="/playall" activec={this.activeitem}></NavItem>
+                    <NavItem className="nav-btn" item="Pick Category " tolink="/play-category" activec={this.activeitem}></NavItem>
                 </ul>
             </nav>
         )
