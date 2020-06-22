@@ -1,10 +1,13 @@
-import React, {useState, useEffect,  } from 'react'
+import React, {useState, useEffect  } from 'react'
 
 
-function Answertracker({isCorrect}) {
+
+function Answertracker({isCorrect, getQuestion}) {
     const [correct, setCorrect] = useState(0)
     const [incorrect, setIncorrect] = useState(0)
     
+
+   
 
    
 
@@ -13,10 +16,21 @@ function Answertracker({isCorrect}) {
 
         if (isCorrect){
             setCorrect((points) => points + 1)
+
+            setTimeout(()=>{
+                getQuestion()
+            }, 3000)
+
+          
         } else {
             setIncorrect((points)=> points + 1)
+
+            setTimeout(()=>{
+                getQuestion()
+            }, 4000)
+            
         }
-    }, [isCorrect])
+    }, [isCorrect, getQuestion])
 
     return(
         <div>

@@ -3,7 +3,10 @@ import React from 'react'
 const Footer = ()=> {
     return(
         <div className="footer">
-            Created by: <a href="https://chriskalfas.com">Chris Kalfas</a>
+            <a href="https://chriskalfas.com">Creator Website</a>
+             <br></br>
+             <br></br>
+            <a className="github-link" href="https://github.com/christopherkalfas/trivkalf" target="_blank" rel="noopener noreferrer">Source Code</a>
         </div>
     )
 }

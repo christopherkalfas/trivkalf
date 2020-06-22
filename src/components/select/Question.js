@@ -6,7 +6,7 @@ function Question ({ question, questionAnswer}) {
         ...question.incorrect_answers,
         question.correct_answer,
     ])
-
+    
     return(
         <div className="question">
         <h3> Question: </h3>

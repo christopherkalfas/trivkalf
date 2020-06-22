@@ -10,21 +10,26 @@ import Results from './Results'
 export default function CategoryContainer(){
     const { question, getQuestion, category, setCategory } = TriviaAPI();
     const [isCorrect, setIsCorrect] = useState(null);
+    
 
+    
     function handleAnswerQuestion(answer){
         const isAnswerCorrect = answer === question.correct_answer
         setIsCorrect(isAnswerCorrect)
+        
     }
-
+    
+    
+    
     function handleNextQuestion(){
-        setIsCorrect(null)
+        setIsCorrect(null)        
         getQuestion()
     }
-
+    
     function TriviaAPI() {
         const [question, setQuestion] = useState(null);
         const [category, setCategory] = useState('any');
-    
+        
         const getQuestion = useCallback(()=> {
             let url = 'https://opentdb.com/api.php?amount=1';
     
@@ -36,7 +41,9 @@ export default function CategoryContainer(){
         }, [category])
     
         useEffect(()=> {
-         getQuestion()
+            getQuestion()
+
+
         }, [getQuestion, category])
     
         return {question, category, getQuestion, setCategory}
@@ -55,12 +62,12 @@ export default function CategoryContainer(){
                     <Question question={question} questionAnswer={handleAnswerQuestion} />
                     )}
                 </div>
-                <div className="next-question-btn">
+                <div>
                 {isCorrect !==null && (
                     <Results
                         isCorrect={isCorrect}
                         question= {question}
-                        getQuestion = {handleNextQuestion}
+                        // getQuestion = {handleNextQuestion}
                     />
                 )}
                     {/* <button onClick={handleNextQuestion}>Next Question</button> */}
@@ -68,7 +75,7 @@ export default function CategoryContainer(){
             </div>
             <div className="round-container">
                 
-                    <AnswerTracker isCorrect={isCorrect} />
+                    <AnswerTracker isCorrect={isCorrect} getQuestion = {handleNextQuestion} />
                     <Footer />
             </div>
         </div>
