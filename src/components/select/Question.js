@@ -8,7 +8,7 @@ function Question ({ question, questionAnswer}) {
     ])
     
     return(
-        <div className="question">
+        <div className="options-container">
         <h3> Question: </h3>
             <h4 dangerouslySetInnerHTML={{__html: question.question}} />
 

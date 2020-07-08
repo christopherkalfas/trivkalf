@@ -45,12 +45,14 @@ function Answertracker({isCorrect, getQuestion}) {
                     </div>
                 </div>
                 <div className="row">
-                <button
-                    className="restart"
-                    onClick={ () => {
-                        setCorrect(0)
-                        setIncorrect(0)
-                    }}>Restart</button>
+                    <div className="restart">
+                        <button
+                            onClick={ () => {
+                                setCorrect(0)
+                                setIncorrect(0)
+                            }}>Restart
+                        </button>
+                    </div>
                 </div>
                 
         </div>

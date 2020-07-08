@@ -5,6 +5,7 @@ import AnswerTracker from "./AnswerTracker"
 import Footer from "../Footer"
 
 
+
 import Results from './Results'
 
 export default function CategoryContainer(){
@@ -63,6 +64,8 @@ export default function CategoryContainer(){
                     )}
                 </div>
                 <div>
+              
+
                 {isCorrect !==null && (
                     <Results
                         isCorrect={isCorrect}
@@ -70,6 +73,7 @@ export default function CategoryContainer(){
                         // getQuestion = {handleNextQuestion}
                     />
                 )}
+            
                     {/* <button onClick={handleNextQuestion}>Next Question</button> */}
                 </div>
             </div>
