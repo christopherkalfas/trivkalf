@@ -1,10 +1,29 @@
 import React from 'react'
+import Modal from 'react-modal'
+
+const customStyles = {
+    content : {
+      top                   : '50%',
+      left                  : '50%',
+      right                 : 'auto',
+      bottom                : 'auto',
+      marginRight           : '-50%',
+      transform             : 'translate(-50%, -50%)'
+    }
+  };
+
+Modal.setAppElement("#root")
 
 export default function Results({ isCorrect, question, getQuestion}){
- 
+   
 
     return(
-        
+        <Modal
+            isOpen={isCorrect !== null}
+            closeTimeoutMS={3000}
+            customStyles = {customStyles}
+        >
+
         <div className="results-container" >
    
             <div className={`results ${isCorrect ? "correct" : "incorrect"}`}>
@@ -24,5 +43,6 @@ export default function Results({ isCorrect, question, getQuestion}){
                 </div> */}
             </div>
         </div>
+        </Modal>
     )
 }
