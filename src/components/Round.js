@@ -23,7 +23,9 @@ class Round extends Component {
                         <h5>{this.props.results.incorrect}</h5>
                     </div>
                 </div>
-                <button className="restart" onClick={e => this.props.restartRound()}>Restart</button>
+                <div className="restart">
+                    <button  onClick={e => this.props.restartRound()}>Restart</button>
+                </div>
                 <Footer />
             </div>
         )

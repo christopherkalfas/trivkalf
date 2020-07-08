@@ -143,7 +143,7 @@ p {
   margin-top: 24px;
 
 }
-button {
+.options-container button {
   border: 2px transparent;
   border-radius: 3px;
   margin: 12px;
@@ -160,13 +160,13 @@ button {
   
 }
 
-button:hover {
+.options-container button:hover {
   box-shadow: 1px 1px 3px 0px rgb(239, 239, 239);
   transform: translateY(-5px);
   transition: 0.3s;
 }
 
-button:active {
+.options-container button:active {
   background: rgb(239, 239, 239);
 }
 
@@ -177,15 +177,35 @@ button:active {
   letter-spacing: 0.1em;
 
 }
-.restart {
-  border-radius: 50%;
-  border: 2px black;
+.restart button {
+  outline: none;
+  border-radius: 5px;
+  border: none;
+  border-bottom: 2px solid #17acb6;
   max-height: 70px;
+  position: relative;
   font-size: 24px;
   width: fit-content;
   padding: 15px;
-  background-color: aquamarine;
-  box-shadow: 3px 3px 6px 4px rgba(69,69,69,1) aquamarine;
+  background: linear-gradient(#22c1c3, #2df0fd);
+  box-shadow: 2px 2px 2px #17acb6;
+  top: 0px;
+  transition: 0.3s;
+  font-family: "Allan", Helvetica, Arial, sans-serif;
+
+  
+}
+
+.restart button:hover {
+  transition: .3s;
+  background: linear-gradient(#22c1c3, aqua);
+}
+
+.restart button:active {
+  transform: translate(5px);
+  box-shadow: 1px 1px 1px #17acb6;
+  top: 3px;
+  border-bottom: 1px solid #17acb6;
 }
   
 
