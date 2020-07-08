@@ -13,12 +13,12 @@ class Answer extends Component {
     }
 
     revealAnswer(){
-        const choices = document.querySelectorAll('choice')
+        const choices = document.querySelectorAll('.options-container button')
         const answer = this.props.data.triviaData[0].correct.__html
 
        choices.forEach((e) => {
             if (e.innerHTML === answer){
-                e.className= "correct"
+                e.className= "correct-color"
 
                 setTimeout(()=> {
                     e.className = "beige"
@@ -33,14 +33,14 @@ class Answer extends Component {
         this.revealAnswer()
 
         if (clicked.innerHTML === answer) {
-            e.target.className = "correct"
+            e.target.className = "correct-color"
             this.props.updateCorrect()
 
             setTimeout(()=> {
                 clicked.className = "beige"
             },800)
         } else {
-            e.target.className = "incorrect"
+            e.target.className = "incorrect-color"
             this.props.updateIncorrect()
 
             setTimeout(()=> {

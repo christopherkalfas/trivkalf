@@ -201,12 +201,12 @@ button:active {
 
 
 
-.correct {
+.correct-color {
   background-color: #28a745!important;
 
 }
 
-.incorrect {
+.incorrect-color {
   background-color: #dc3545!important;
 
 }
