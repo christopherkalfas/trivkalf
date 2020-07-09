@@ -210,13 +210,14 @@ p {
   
 
 
-.next-question {
-  border-radius: 50%;
-  border: 2px black;
- 
-
-  padding: 15px;
-
+.Overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 200px;
+  width:100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6); 
 }
 
 
@@ -239,20 +240,32 @@ p {
 }
 
 .results {
-  border: 1px sold #aaa;
+  
   border-radius: 5px;
   box-shadow: 0 1px 0 1px rgba(0,0,0,.04);
-  padding: 6px;
-  margin-top: 6px;
+  position: fixed;
+  width: 80%;
+  height: 500px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  text-align: center;
+
 }
+
+
 
 .content {
   color: whitesmoke;
+  font-size: 50px;
+  font-family: "Allan", Helvetica, Arial, sans-serif;
 }
 
 
 .answer-name{
-  color: #28a745!important
+  color: whitesmoke !important;
+  font-size: 50px;
+  font-family: "Allan", Helvetica, Arial, sans-serif;
 }
 select {
   font-family: "Allan", Helvetica, Arial, sans-serif;
@@ -268,33 +281,55 @@ select {
 .footer {
   font-family: "Allan", Helvetica, Arial, sans-serif;
   text-align: left;
- 
+  flex-wrap: wrap;
   color: whitesmoke;
-  font-size: 20px;
+  font-size: 18px;
   letter-spacing: 0.1em;
-  padding-top: 50px;
+  position: inherit;
   font-weight: 200;
-  margin-top: 20px;
-  width: 100%;
-  margin-right: 6px;
+  height: 200px;
+  margin: 50px 0;
+  width: 350px;
+  
+  overflow: hidden;
+ 
 
 
 }
 
 .footer a {
   text-decoration: none;
+  border-radius: 5px;
   color: whitesmoke;
-  padding: 6px;
-  border: 3px #1c8bd1;
-  background-color: #1c8bd1;
-  box-shadow: 1px 2px 2px 1px aliceblue rgba(69,69,69,1)  #1c8bd1;
+  padding: 10px;
+  border: none;
+  flex-basis: 100%; display: flex;
+  border-bottom: 2px solid #1c67d1;
+  background:linear-gradient(#1c8bd1, #1c57d1);
+  box-shadow: 2px 2px 2px #1c67d1;
   text-align: center;
-  border-radius: 3px;
-  margin-top: 12px;
+  outline: none;
+  margin-top: 10px;
+  transition: .3s;
+  position: relative;
+  max-height: 100px;
+  width: fit-content;
+}
+
+.footer a:hover {
+  transition:  .3s;
+  background: linear-gradient(#1c67d1, #3281f0);
+}
+.footer a:active{
+  transform: translate(5px);
+  box-shadow: 1px 1px 1px #1c67d1;
+  top: 3px;
+  border-bottom: 1px solid #1c67d1;
+}
+
+.github-link {
+ 
+  flex-basis: 100%; display: flex;
 
 }
 
-
-.github-link{
-  margin-top:8px;
-}

@@ -16,7 +16,7 @@ function Answertracker({isCorrect, getQuestion}) {
 
         if (isCorrect){
             setCorrect((points) => points + 1)
-
+           
             setTimeout(()=>{
                 getQuestion()
             }, 3000)
@@ -24,7 +24,7 @@ function Answertracker({isCorrect, getQuestion}) {
           
         } else {
             setIncorrect((points)=> points + 1)
-
+          
             setTimeout(()=>{
                 getQuestion()
             }, 4000)
